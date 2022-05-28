@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date meta">
+                {{ post.published_date }}
+                {% if user.is_authenticated %}
+                    <p class="meta"><a href="{% url 'post_edit' pk=post.pk %}">Click here to edit this post!</a></p>
+                    <p class="meta"><a href="{% url 'post_delete' pk=post.pk %}">Click here to delete this post!</a></p>
+                {% endif %}
+            </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
