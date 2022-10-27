@@ -1,6 +1,16 @@
 {% extends 'blog/base.html' %}
-{% block content %}
-  
-  <h1 class="title">Index</h1>
+{% load static %}
 
+{% block content %}
+  <div>
+    <h1 class="title">What's this? What is it about?</h1>
+    <!-- <p class="date meta incenter">" I am what I am. "</p> -->
+    <img class="stripy" src="{% static 'img/img1.jpg' %}">
+    <p>At the moment I have no idea what it is. At some point, I had a desire to do something like an adventure blog with friends, where I would tell where we are, what we see and what wonderful people appear in my life. Let's find out what will come of it together...</p>
+    <p>A fucking war and a fucking Putin forced our team to split up for a while. Before that, our adventures were several times a week.</p>
+    <p class="meta">Let's find out what will come of it together...</p>   
+    <img class="stripy" src="{% static 'img/img2.jpg' %}">
+    <p class="meta"><a href="/blog">Go to Adventures</a></p>
+
+  </div>
 {% endblock %}

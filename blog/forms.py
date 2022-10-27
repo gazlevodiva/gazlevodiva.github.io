@@ -1,9 +1,12 @@
 from django import forms
-
+from django_editorjs_fields import EditorJsWidget
 from .models import Post
 
 class PostForm(forms.ModelForm):
-
     class Meta:
         model = Post
-        fields = ('title', 'text',)
+        exclude = []
+        widgets = {
+            'body_editorjs': EditorJsWidget(config={'minHeight': 100}),
+            'body_editorjs_text': EditorJsWidget(plugins=["@editorjs/image", "@editorjs/header"])
+        }
